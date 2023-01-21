@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-list-container',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-container.component.css']
 })
 export class ListContainerComponent {
+  @Input() list: string[] = [];
+  @Input() title: string = '';
+  @Output() drop = new EventEmitter<any>();
+
+  onDrop(e:any) {
+    this.drop.emit(e);
+  }
 
 }

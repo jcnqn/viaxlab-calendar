@@ -1,1 +1,11 @@
-<p>list-container works!</p>
+<div class="list-container">
+  <h2>{{title}}</h2>
+  <div
+    cdkDropList
+    [cdkDropListData]="list"
+    class="list"
+    cdkDropListSortingDisabled
+    (cdkDropListDropped)="onDrop($event)">
+    <div class="item-box" *ngFor="let item of list" cdkDrag>{{item}}</div>
+  </div>
+</div>

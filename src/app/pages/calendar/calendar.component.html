@@ -1,68 +1,7 @@
 <div class="content">
-  <div class="sidenav">
-    <h1>sidenav</h1>
-  </div>
+  <app-sidenav class="sidenav"></app-sidenav>
   <div class="calendar-content">
-    <div class="title-button">
-      <h1 class="title">
-        <strong>Itinerario</strong> (Bariloche 2022)
-      </h1>
-      <button mat-raised-button color="primary">
-        <mat-icon>add_circle_outlined</mat-icon>
-        Nueva actividad
-      </button>
-    </div>
-    <div class="calendar">
-      <div cdkDropListGroup>
-
-        <div class="example-container">
-          <h2>Items 1</h2>
-          <div
-            cdkDropList
-            [cdkDropListData]="calendarService.list1"
-            class="example-list"
-            cdkDropListSortingDisabled
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of calendarService.list1" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-
-        <div class="example-container">
-          <h2>Items 2</h2>
-          <div
-            cdkDropList
-            [cdkDropListData]="calendarService.list2"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of calendarService.list2" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-
-        <div class="example-container">
-          <h2>Items 3</h2>
-          <div
-            cdkDropList
-            [cdkDropListData]="calendarService.list3"
-            class="example-list"
-            cdkDropListSortingDisabled
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of calendarService.list3" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-
-        <div class="example-container">
-          <h2>Items 4</h2>
-          <div
-            cdkDropList
-            [cdkDropListData]="calendarService.list4"
-            class="example-list"
-            cdkDropListSortingDisabled
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of calendarService.list4" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    <app-title-button></app-title-button>
+    <app-calendar-groups></app-calendar-groups>
   </div>
 </div>
