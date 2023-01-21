@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CalendarService} from "../../pages/calendar.service";
+import {CalendarService} from "../../calendar.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({

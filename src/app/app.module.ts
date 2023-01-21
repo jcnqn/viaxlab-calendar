@@ -1,32 +1,28 @@
 import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
+import {MaterialModule} from "./material.module";
 
 import {AppComponent} from './app.component';
 import {CalendarComponent} from './pages/calendar/calendar.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CalendarGroupsComponent } from './components/calendar-groups/calendar-groups.component';
-import { TitleButtonComponent } from './components/title-button/title-button.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ListContainerComponent } from './components/list-container/list-container.component';
+import {CalendarGroupsComponent} from './components/calendar-groups/calendar-groups.component';
+import {ListContainerComponent} from './components/list-container/list-container.component';
+import {SidenavComponent} from './components/sidenav/sidenav.component';
+import {TitleButtonComponent} from './components/title-button/title-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     CalendarGroupsComponent,
-    TitleButtonComponent,
+    ListContainerComponent,
     SidenavComponent,
-    ListContainerComponent
+    TitleButtonComponent,
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    DragDropModule
+    BrowserModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
