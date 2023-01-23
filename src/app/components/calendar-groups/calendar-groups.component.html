@@ -1,28 +1,24 @@
 <div class="calendar">
   <div cdkDropListGroup>
     <app-list-container
-      [tasks]="calendarService.tasks"
       title="Sin fecha asignada"
       [date]="date1"
       (drop)="drop($event)"
     >
     </app-list-container>
     <app-list-container
-      [tasks]="calendarService.tasks"
       title="16 de Mayo"
       [date]="date2"
       (drop)="drop($event)"
     >
     </app-list-container>
     <app-list-container
-      [tasks]="calendarService.tasks"
       title="17 de Mayo"
       [date]="date3"
       (drop)="drop($event)"
     >
     </app-list-container>
     <app-list-container
-      [tasks]="calendarService.tasks"
       title="18 de Mayo"
       [date]="date4"
       (drop)="drop($event)"

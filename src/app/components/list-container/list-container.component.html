@@ -2,10 +2,17 @@
   <h2>{{title}}</h2>
   <div
     cdkDropList
-    [cdkDropListData]="filteredTasks"
+    [cdkDropListData]="activities"
     class="list"
     cdkDropListSortingDisabled
     (cdkDropListDropped)="onDrop($event)">
-    <div class="item-box" *ngFor="let item of filteredTasks" cdkDrag>{{item.description}}</div>
+    <div class="item-box" *ngFor="let item of activities" cdkDrag>
+      <div class="item-box-title">
+        <mat-icon>task_alt</mat-icon>
+        <span>
+          {{item.title}}
+        </span>
+      </div>
+    </div>
   </div>
 </div>
