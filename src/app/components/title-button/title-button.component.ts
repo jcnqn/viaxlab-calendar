@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-title-button',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./title-button.component.css']
 })
 export class TitleButtonComponent {
+  @Output() drawerToggle = new EventEmitter<any>();
 
+  onDrawerToggle(e: any) {
+    this.drawerToggle?.emit(e)
+  }
 }

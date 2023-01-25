@@ -9,6 +9,8 @@ import {CalendarGroupsComponent} from './components/calendar-groups/calendar-gro
 import {ListContainerComponent} from './components/list-container/list-container.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {TitleButtonComponent} from './components/title-button/title-button.component';
+import {SidenavDrawerComponent} from "./components/sidenav-drawer/sidenav-drawer.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import {TitleButtonComponent} from './components/title-button/title-button.compo
     ListContainerComponent,
     SidenavComponent,
     TitleButtonComponent,
+    SidenavDrawerComponent,
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    MaterialModule,
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

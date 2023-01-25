@@ -1,5 +1,6 @@
 <div class="list-container">
-  <h2>{{title}}</h2>
+  <h2 *ngIf="date">{{date | date:'longDate'}}</h2>
+  <h2 *ngIf="!date">No Date Assigned</h2>
   <div
     cdkDropList
     [cdkDropListData]="activities"
@@ -8,10 +9,27 @@
     (cdkDropListDropped)="onDrop($event)">
     <div class="item-box" *ngFor="let item of activities" cdkDrag>
       <div class="item-box-title">
-        <mat-icon>task_alt</mat-icon>
-        <span>
-          {{item.title}}
-        </span>
+        <div class="extra-buttons">
+          <span class="material-symbols-outlined" (click)="onDrawerToggle($event, item)">edit</span>
+          <span class="material-symbols-outlined" (click)="onDeleteActivity(item.activityId)">delete</span>
+        </div>
+        <mat-icon class="item-icon" *ngIf="item.type === 'OTHER'">task_alt_lg</mat-icon>
+        <mat-icon class="item-icon" *ngIf="item.type === 'FOOD'">restaurant_menu</mat-icon>
+        <mat-icon class="item-icon" *ngIf="item.type === 'ACTIVITY'">surfing</mat-icon>
+        <mat-icon class="item-icon" *ngIf="item.type === 'PARTY'">celebration</mat-icon>
+        <div class="item-box-title-time">
+          <span class="title">{{item.title}}</span>
+          <span class="time" *ngIf="item.startDate">
+            {{item.startDate | date:'shortTime'}}-{{item.endDate | date:'shortTime'}}
+          </span>
+          <mat-chip *ngIf="item.status !== null" class="mat-chip-category">
+            <div class="mat-chip-content" >
+              <mat-icon *ngIf="item.status === 'IN_PROGRESS'" color="accent">fiber_manual_record</mat-icon>
+              <mat-icon *ngIf="item.status === 'DONE'" color="accent">done</mat-icon>
+              <span>{{setStatus(item.status)}}</span>
+            </div>
+          </mat-chip>
+        </div>
       </div>
     </div>
   </div>

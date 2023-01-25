@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {CalendarService} from "../../calendar.service";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
@@ -13,6 +13,7 @@ export class CalendarGroupsComponent {
   date2 = new Date('2023-05-16')
   date3 = new Date('2023-05-17')
   date4 = new Date('2023-05-18')
+  @Output() drawerToggle = new EventEmitter<any>();
   constructor(public calendarService: CalendarService) {}
 
   drop(event: CdkDragDrop<string[]>) {
@@ -26,6 +27,10 @@ export class CalendarGroupsComponent {
         event.currentIndex,
       );
     }
+  }
+
+  onDrawerToggle(e: any) {
+    this.drawerToggle?.emit(e)
   }
 
 }

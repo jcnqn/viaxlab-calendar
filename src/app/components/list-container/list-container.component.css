@@ -16,6 +16,7 @@
 }
 
 .item-box {
+  position: relative;
   padding: 20px 10px;
   border: solid 1px #ccc;
   border-radius: 10px;
@@ -27,7 +28,7 @@
   box-sizing: border-box;
   cursor: move;
   background: white;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 5px 10px 2px;
   box-shadow: 2px 2px 5px grey;
 }
@@ -63,9 +64,70 @@
 .item-box-title {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .item-box-title span {
   margin-left: 5px;
 }
+
+.item-box-title-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-box-title-time .time {
+  font-size: 0.8rem;
+}
+
+.mat-chip-content {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.mat-chip-content mat-icon {
+  font-size: 1.6rem;
+}
+
+mat-chip {
+  width: 145px;
+  height: 27px;
+}
+
+.mat-chip-category {
+  background-color: aqua !important;
+}
+
+.item-icon {
+  font-size: 1.8rem;
+  width: 40px;
+  height: 40px;
+}
+
+.extra-buttons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.extra-buttons span {
+  font-size: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 25%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+
+
+
+
+

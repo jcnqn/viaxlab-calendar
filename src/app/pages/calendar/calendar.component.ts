@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {SidenavDrawerComponent} from "../../components/sidenav-drawer/sidenav-drawer.component";
 
 @Component({
   selector: 'app-calendar',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class CalendarComponent {
 
+@ViewChild(SidenavDrawerComponent) sidenavDrawer: SidenavDrawerComponent | undefined
 
-
+  onDrawerToggle() {
+    // @ts-ignore
+    this.sidenavDrawer?.drawer.toggle()
+  }
 }

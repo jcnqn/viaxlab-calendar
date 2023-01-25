@@ -1,7 +1,11 @@
-<div class="content">
-  <app-sidenav class="sidenav"></app-sidenav>
-  <div class="calendar-content">
-    <app-title-button></app-title-button>
-    <app-calendar-groups></app-calendar-groups>
+<mat-drawer-container>
+  <div class="content">
+    <app-sidenav class="sidenav"></app-sidenav>
+    <div class="calendar-content">
+      <app-title-button (drawerToggle)="onDrawerToggle($event)"></app-title-button>
+      <app-calendar-groups (drawerToggle)="onDrawerToggle($event)"></app-calendar-groups>
+    </div>
   </div>
-</div>
+  <app-sidenav-drawer></app-sidenav-drawer>
+</mat-drawer-container>
+

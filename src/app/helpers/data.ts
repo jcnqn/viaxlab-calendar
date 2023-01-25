@@ -37,8 +37,8 @@ export const activities: Activity[] = [
     activityId: 5,
     title: "Almuerzo",
     type: "FOOD",
-    startDate: new Date("2023-01-22 01:30:00"),
-    endDate: new Date("2023-01-22 23:30:00"),
+    startDate: new Date("2023-05-18 13:30:00"),
+    endDate: new Date("2023-05-18 14:30:00"),
     status: "DONE",
   },
   {

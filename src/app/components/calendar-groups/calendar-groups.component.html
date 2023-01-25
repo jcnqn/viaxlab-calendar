@@ -1,27 +1,27 @@
 <div class="calendar">
   <div cdkDropListGroup>
     <app-list-container
-      title="Sin fecha asignada"
       [date]="date1"
       (drop)="drop($event)"
+      (drawerToggle)="onDrawerToggle($event)"
     >
     </app-list-container>
     <app-list-container
-      title="16 de Mayo"
       [date]="date2"
       (drop)="drop($event)"
+      (drawerToggle)="onDrawerToggle($event)"
     >
     </app-list-container>
     <app-list-container
-      title="17 de Mayo"
       [date]="date3"
       (drop)="drop($event)"
+      (drawerToggle)="onDrawerToggle($event)"
     >
     </app-list-container>
     <app-list-container
-      title="18 de Mayo"
       [date]="date4"
       (drop)="drop($event)"
+      (drawerToggle)="onDrawerToggle($event)"
     >
     </app-list-container>
   </div>
