@@ -1,29 +1,29 @@
 <div class="calendar">
-  <div cdkDropListGroup>
-    <app-list-container
-      [date]="date1"
-      (drop)="drop($event)"
-      (drawerToggle)="onDrawerToggle($event)"
-    >
-    </app-list-container>
-    <app-list-container
-      [date]="date2"
-      (drop)="drop($event)"
-      (drawerToggle)="onDrawerToggle($event)"
-    >
-    </app-list-container>
-    <app-list-container
-      [date]="date3"
-      (drop)="drop($event)"
-      (drawerToggle)="onDrawerToggle($event)"
-    >
-    </app-list-container>
-    <app-list-container
-      [date]="date4"
-      (drop)="drop($event)"
-      (drawerToggle)="onDrawerToggle($event)"
-    >
-    </app-list-container>
-  </div>
+    <div cdkDropListGroup>
+        <app-list-container
+                (drawerToggle)="onDrawerToggle($event)"
+                (drop)="drop($event)"
+                [date]="date1"
+        >
+        </app-list-container>
+        <app-list-container
+                (drawerToggle)="onDrawerToggle($event)"
+                (drop)="drop($event)"
+                [date]="date2"
+        >
+        </app-list-container>
+        <app-list-container
+                (drawerToggle)="onDrawerToggle($event)"
+                (drop)="drop($event)"
+                [date]="date3"
+        >
+        </app-list-container>
+        <app-list-container
+                (drawerToggle)="onDrawerToggle($event)"
+                (drop)="drop($event)"
+                [date]="date4"
+        >
+        </app-list-container>
+    </div>
 
 </div>

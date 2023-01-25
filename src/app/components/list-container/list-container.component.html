@@ -1,36 +1,37 @@
 <div class="list-container">
-  <h2 *ngIf="date">{{date | date:'longDate'}}</h2>
-  <h2 *ngIf="!date">No Date Assigned</h2>
-  <div
-    cdkDropList
-    [cdkDropListData]="activities"
-    class="list"
-    cdkDropListSortingDisabled
-    (cdkDropListDropped)="onDrop($event)">
-    <div class="item-box" *ngFor="let item of activities" cdkDrag>
-      <div class="item-box-title">
-        <div class="extra-buttons">
-          <span class="material-symbols-outlined" (click)="onDrawerToggle($event, item)">edit</span>
-          <span class="material-symbols-outlined" (click)="onDeleteActivity(item.activityId)">delete</span>
-        </div>
-        <mat-icon class="item-icon" *ngIf="item.type === 'OTHER'">task_alt_lg</mat-icon>
-        <mat-icon class="item-icon" *ngIf="item.type === 'FOOD'">restaurant_menu</mat-icon>
-        <mat-icon class="item-icon" *ngIf="item.type === 'ACTIVITY'">surfing</mat-icon>
-        <mat-icon class="item-icon" *ngIf="item.type === 'PARTY'">celebration</mat-icon>
-        <div class="item-box-title-time">
-          <span class="title">{{item.title}}</span>
-          <span class="time" *ngIf="item.startDate">
+    <h2 *ngIf="date">{{date | date:'longDate'}}</h2>
+    <h2 *ngIf="!date">No Date Assigned</h2>
+    <div
+            (cdkDropListDropped)="onDrop($event)"
+            [cdkDropListData]="activities"
+            cdkDropList
+            cdkDropListSortingDisabled
+            class="list">
+        <div *ngFor="let item of activities" cdkDrag class="item-box">
+            <div class="item-box-title">
+                <div class="extra-buttons">
+                    <span (click)="onDrawerToggle($event, item)" class="material-symbols-outlined">edit</span>
+                    <span (click)="onDeleteActivity(item.activityId)" class="material-symbols-outlined">delete</span>
+                </div>
+                <mat-icon *ngIf="item.type === 'OTHER'" class="item-icon">task_alt_lg</mat-icon>
+                <mat-icon *ngIf="item.type === 'FOOD'" class="item-icon">restaurant_menu</mat-icon>
+                <mat-icon *ngIf="item.type === 'ACTIVITY'" class="item-icon">surfing</mat-icon>
+                <mat-icon *ngIf="item.type === 'PARTY'" class="item-icon">celebration</mat-icon>
+                <div class="item-box-title-time">
+                    <span class="title">{{item.title}}</span>
+                    <span *ngIf="item.startDate" class="time">
             {{item.startDate | date:'shortTime'}}-{{item.endDate | date:'shortTime'}}
           </span>
-          <mat-chip *ngIf="item.status !== null" class="mat-chip-category">
-            <div class="mat-chip-content" >
-              <mat-icon *ngIf="item.status === 'IN_PROGRESS'" color="accent">fiber_manual_record</mat-icon>
-              <mat-icon *ngIf="item.status === 'DONE'" color="accent">done</mat-icon>
-              <span>{{setStatus(item.status)}}</span>
+                    <mat-chip *ngIf="item.status !== null" class="mat-chip-category">
+                        <div class="mat-chip-content">
+                            <mat-icon *ngIf="item.status === 'IN_PROGRESS'" color="accent">fiber_manual_record
+                            </mat-icon>
+                            <mat-icon *ngIf="item.status === 'DONE'" color="accent">done</mat-icon>
+                            <span>{{setStatus(item.status)}}</span>
+                        </div>
+                    </mat-chip>
+                </div>
             </div>
-          </mat-chip>
         </div>
-      </div>
     </div>
-  </div>
 </div>
