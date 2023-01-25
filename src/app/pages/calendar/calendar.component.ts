@@ -10,7 +10,7 @@ export class CalendarComponent {
 
 @ViewChild(SidenavDrawerComponent) sidenavDrawer: SidenavDrawerComponent | undefined
 
-  onDrawerToggle() {
+  onDrawerToggle(e: any) {
     // @ts-ignore
     this.sidenavDrawer?.drawer.toggle()
   }
